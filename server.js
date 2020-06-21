@@ -2,11 +2,13 @@ const express = require("express");
 
 const app = express();
 app.get("/", (request, response) => {
+    const { whiteCh, BlackCh } = request.query; 
     response.json({
-        recipient: "CodeYourFuture code",
-        message: "Hello there!"
+        whiteCh:BlackCh, 
+        BlackCh:whiteCh
     });
     });
+
 app.listen(3000 , () => {
-    console.log("lisetning on poet 3000 ! ");
+    console.log("listening on poet 3000 ! ");
 })
